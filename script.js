@@ -33,6 +33,14 @@ const setGuess = (guess) => {
   document.querySelector(".guess").value = guess;
 };
 
+const resetNum = () => {
+  num = Math.trunc(Math.random() * 20) + 1;
+};
+
+const resetScore = () => {
+  score = 20;
+};
+
 document.querySelector(".check").addEventListener("click", () => {
   const guess = +document.querySelector(".guess").value;
 
@@ -69,8 +77,8 @@ document.querySelector(".check").addEventListener("click", () => {
 });
 
 document.querySelector(".again").addEventListener("click", () => {
-  num = Math.trunc(Math.random() * 20) + 1;
-  score = 20;
+  resetNum();
+  resetScore();
   setNum("?");
   setScore(score);
   setGuess("");
